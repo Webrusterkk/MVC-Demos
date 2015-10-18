@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebApplication2.Models.empdata>
+@{
+    ViewBag.Title = "Action Methods";
+}
+
+<h2>Action Methods</h2>
+
+>> This is Example to <strong>ActionLink</strong> Which Call the Add Method and return the result in the form of View(We Need To Click)
+<br />
+<p style="color:red;">@Html.ActionLink("Create New", "Add")</p>
+<br />
+>> This is Example of <strong>Action</strong> Method Which Calls the Add Method Automatically and Returns the Result to Existing Page
+<br />
+<p style="color:red;">
+     Result : @Html.Action("hello") //This Result is in String Format</p> 
+<br />
+>> This is Example of <strong>RenderAction Without Parameter returning Html Result</strong> Method Which Calls the Add Method Automatically.
+<br />
+<p style="color:red;">
+    @{Html.RenderAction("hello1");}</p>
+<br />
+>> This is Example of <strong>RenderAction With Parameter returning Html Result</strong> Method Which Calls the Add Method Automatically
+<br />
+<p style="color:red;">@{Html.RenderAction("Index", "RenderAc", new { a = 10, b = 40 });}</p>
+<br />
+
+<h2>Partial Methods</h2>
+<br />
+>> This is The Example of RenderPartial it will return the Static Content in Html Format(used as usercontrol)
+<br />
+   @{Html.RenderPartial("_PartialPage1");}
+<br />
+
+>> This is the Example of Partial it will Return the Static Content in String Format
+<br />
+@Html.Partial("_PartialPage1")
+
+
+
+
+

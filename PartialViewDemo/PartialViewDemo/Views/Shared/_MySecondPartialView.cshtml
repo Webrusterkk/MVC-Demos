@@ -1,0 +1,41 @@
+﻿@model List<PartialViewDemo.Models.Department>
+
+<h2>_MyView from partial view using PartialView</h2>
+
+
+@if (Model != null)
+{
+    <div>
+        <table cellspacing="0" width="50%" border="1">
+            <thead>
+                <tr>
+                    <th>
+                        Department Name
+                    </th>
+                    <th>
+                        Department Rule
+                    </th>
+                    <th>
+                        Admin Comment
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var dept in Model)
+                {
+                    <tr>
+                        <td align="center">
+                            @dept.DepartmentName
+                        </td>
+                        <td align="center">
+                            @dept.DepartmentRule
+                        </td>
+                        <td align="center">
+                            @dept.AdminComment
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

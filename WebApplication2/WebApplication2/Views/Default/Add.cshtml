@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Example of Action Link Method</h2>
+
+
+
+
+<table class="table-bordered">
+    <tr>
+        <td>
+            First Number :
+        </td>
+        <td>
+            @ViewBag.a
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Second Number :
+        </td>
+        <td>
+            @ViewBag.b
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Result :
+        </td>
+        <td>
+            @ViewBag.c
+        </td>
+    </tr>
+</table>
+
+@Html.ActionLink("Return To Main","Index")

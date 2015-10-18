@@ -1,0 +1,14 @@
+﻿@model COOKIEDEMO2.Models.CookieStore
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+Employee Name : @Html.Label(COOKIEDEMO2.Models.CookieStore.GetCookie("EMP"))
+
+<br />
+<br />
+<br />
+
+@Html.ActionLink("Go To C2 Controller","Index","C2")

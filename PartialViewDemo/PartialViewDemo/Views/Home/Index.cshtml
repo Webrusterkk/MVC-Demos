@@ -1,0 +1,45 @@
+﻿@model PartialViewDemo.Models.Company
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+    <body>
+        <div>
+            <h1>This is from main view upper.</h1>
+        </div>
+        <div>
+            @Html.Partial("_MyPartialView", Model.Department )
+            @{
+                Html.RenderPartial("_MyPartialView", Model.Department);
+            }
+        </div>
+        <div>
+            <h1>This is from main view lower.</h1>
+        </div>
+        
+        <div id="divTest">
+        </div>
+        <input type="button" value="Click" id="btnClick"/>
+
+    </body>
+    <script src="~/Content/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('#btnClick').click(function(data) {
+                $.post("@Url.Action("ShowPartailView", "Home")", function(data) {
+                    if (data) {
+                        $('#divTest').append(data);
+                    }
+                });
+            });
+        });
+    </script>
+</html>
